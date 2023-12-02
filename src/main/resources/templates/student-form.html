@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymleaf.org">
+
+<head>
+    <title>HelloWorld Form</title>
+    <link rel="stylesheet" th:href="@{/css/demo.css}">
+</head>
+<body>
+<h2>Student Registration form</h2>
+<form th:action = "@{/processStudentForm}" th:object="${student}" method="POST">
+    First Name : <input type="text" placeholder="Enter your first name" name="firstName" th:field="*{firstName}"/>
+    <br></br>
+    Last Name : <input type="text" placeholder="Enter your last name" name="lastName" th:field="*{lastName}"/>
+<br></br>
+    <input type="submit"/>
+    <br></br>
+
+<!--    <select th:field="*{country}">-->
+<!--        <option th:value="Brazil">Brazil</option>-->
+<!--        <option th:value="France">France</option>-->
+<!--        <option th:value="India">India</option>-->
+<!--    </select>-->
+
+    <select th:field="*{country}">
+        <option th:each ="tempCountry : ${countries}" th:value ="${tempCountry}" th:text="${tempCountry}"></option>
+    </select>
+<br/>
+    Fav programming lan
+<!--        <select >-->
+<!--            <input type="radio" th:field="*{language}" th:value="Go">Go</input>-->
+<!--            <input type="radio" th:field="*{language}" th:value="Java">Java</input>-->
+<!--            <input type="radio" th:field="*{language}" th:value="C">C</input>-->
+<!--        </select>-->
+
+    <select th:field="*{language}">
+        <option th:each ="tempLan : ${languages}" th:value ="${tempLan}" th:text="${tempLan}"></option>
+    </select>
+
+    <br/>
+    Select your favorite operating systems
+        <input th:field = "${operatingSystems}"  type="checkbox" th:each ="tempOS : ${operatingSystems}" th:value ="${tempOS}" th:text="${tempOS}"/>
+
+</form>
+</body>
+</html>

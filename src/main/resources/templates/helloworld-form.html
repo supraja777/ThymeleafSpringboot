@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymleaf.org">
+
+<head>
+    <title>HelloWorld Form</title>
+    <link rel="stylesheet" th:href="@{/css/demo.css}">
+</head>
+<body>
+<form th:action = "@{/processFormV3}" method="GET">
+    <input type="text" placeholder="Enter your name" name="studentName"/>
+    <input type="submit"/>
+</form>
+</body>
+</html>

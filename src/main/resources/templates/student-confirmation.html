@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymleaf.org">
+
+<head>
+    <title>HelloWorld Form</title>
+    <link rel="stylesheet" th:href="@{/css/demo.css}">
+</head>
+<body>
+<h2>Student Confirmation form</h2>
+<span th:text="${student.firstName}"></span>
+<span th:text ="${student.country}"></span>
+<span th:text ="${student.language}"></span>
+<ul>
+    <li th:each ="tempOS : ${student.operatingSystems}" th:field ="${student.operatingSystems}" th:text="${tempOS}"></li>
+</ul>
+
+
+</body>
+</html>
